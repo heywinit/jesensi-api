@@ -9,10 +9,8 @@ import java.util.List;
 
 @ToString()
 @Document(collection = "aircraft")
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@AllArgsConstructor @NoArgsConstructor
+@Getter @Setter
 public class Aircraft {
     @Id
     private String id;
@@ -41,7 +39,7 @@ public class Aircraft {
 
     private List<String> images;
 
-    @ToString(includeFieldNames = true)
+    @ToString() @Getter @Setter @AllArgsConstructor @NoArgsConstructor
     public static class Dimensions {
         private String length;
         private String wingspan;
