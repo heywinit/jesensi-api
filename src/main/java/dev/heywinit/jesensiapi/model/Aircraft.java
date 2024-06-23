@@ -39,6 +39,8 @@ public class Aircraft {
 
     private List<String> images;
 
+    private String engineId;
+
     @ToString() @Getter @Setter @AllArgsConstructor @NoArgsConstructor
     public static class Dimensions {
         private String length;

@@ -1,25 +1,24 @@
 package dev.heywinit.jesensiapi.service;
 
 import dev.heywinit.jesensiapi.exception.ResourceNotFoundException;
-import dev.heywinit.jesensiapi.model.Aircraft;
-import dev.heywinit.jesensiapi.repository.AircraftRepository;
+import dev.heywinit.jesensiapi.model.Engine;
+import dev.heywinit.jesensiapi.repository.EngineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class AircraftService {
-
+public class EngineService {
     @Autowired
-    private AircraftRepository aircraftRepository;
+    private EngineRepository engineRepository;
 
-    public List<Aircraft> getAll() {
-        return aircraftRepository.findAll();
+    public List<Engine> getAll() {
+        return engineRepository.findAll();
     }
 
-    public Aircraft getById(String id) {
-        return aircraftRepository.findById(id)
+    public Engine getById(String id) {
+        return engineRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Aircraft not found with id: " + id));
     }
 }
