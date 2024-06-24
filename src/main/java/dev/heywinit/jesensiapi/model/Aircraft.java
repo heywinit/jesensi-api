@@ -17,6 +17,7 @@ public class Aircraft {
 
     private String name;
     private String role;
+    private String type;
     private String status;
     private String nationalOrigin;
     private String numberBuilt;

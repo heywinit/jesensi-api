@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -17,6 +18,9 @@ public class GlobalExceptionHandler {
         logger.error("Unexpected error", ex);
         if(ex instanceof ResourceNotFoundException)
             return ResponseEntity.status(500).body(new MessageResponse(ex.getMessage(), false));
+
+        if(ex instanceof NoResourceFoundException)
+            return ResponseEntity.status(404).body(new MessageResponse("The resource you're trying to fetch does not exist", false));
 
         return ResponseEntity.status(500).body(new MessageResponse("Unexpected error", false));
     }
