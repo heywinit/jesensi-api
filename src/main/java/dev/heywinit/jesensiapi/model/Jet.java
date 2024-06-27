@@ -8,10 +8,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 @ToString()
-@Document(collection = "aircraft")
+@Document(collection = "jet")
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter
-public class Aircraft {
+public class Jet {
     @Id
     private String id;
 
@@ -34,9 +34,9 @@ public class Aircraft {
     private LocalDate firstFlight;
     private LocalDate introduction;
 
-    private Aircraft variants;
-    private Aircraft developedFrom;
-    private Aircraft developedInto;
+    private Jet variants;
+    private Jet developedFrom;
+    private Jet developedInto;
 
     private List<String> images;
 

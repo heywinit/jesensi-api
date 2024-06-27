@@ -19,6 +19,6 @@ public class EngineService {
 
     public Engine getById(String id) {
         return engineRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Aircraft not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Engine not found with id: " + id));
     }
 }
